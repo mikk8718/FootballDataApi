@@ -1,4 +1,4 @@
-name: Build Rasa Docker Image and Train Model
+name: Build Webapp Docker Image
 
 on:
   push:
