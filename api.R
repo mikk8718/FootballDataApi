@@ -1,6 +1,10 @@
 library(plumber)
 library(dplyr)
 
+#* @apiTitle Football Match Stats API
+#* @apiDescription An API for accessing and summarizing football match data across multiple leagues, teams, and seasons.
+
+
 #* @param league 
 #* @param season 
 #* @param result 
