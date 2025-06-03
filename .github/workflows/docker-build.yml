@@ -1,9 +1,9 @@
-name: Build Webapp Docker Image
+name: Build API 
 
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   build:
@@ -28,7 +28,7 @@ jobs:
           REPO_NAME=${{ github.repository }} 
           echo "REPO_NAME_LC=${REPO_NAME,,}" >>${GITHUB_ENV}
 
-      - name: Build Docker image with Rasa model
+      - name: Build API 
         run: |
           docker build -t ghcr.io/$REPO_NAME_LC:latest .
 
