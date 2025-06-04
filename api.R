@@ -2,15 +2,14 @@ library(plumber)
 library(dplyr)
 
 #* @apiTitle Football Match Stats API
-#* @apiDescription An API for accessing and summarizing football match data across multiple leagues, teams, and seasons.
-
+#* @apiDescription Access and summarize football match data across leagues, teams, and seasons. Use the /meta endpoint first to explore available leagues, seasons, and team names. Then plug those into the /matches or /summary endpoints using query parameters.
 
 #* @param league 
 #* @param season 
 #* @param result 
 #* @param team 
 #* @get /matches
-function(league = "bundesliga", season = NULL, result = NULL, team = NULL) {
+function(league = "premier_league", season = "2024_25", result = NULL, team = NULL) {
   league_path <- file.path("Data", league)
   
   if (!dir.exists(league_path)) {
@@ -87,9 +86,7 @@ function(league = NULL) {
 #* @param season 
 #* @param team 
 #* @get /summary
-function(league = "bundesliga", season = "2024_25", team = NULL) {
-  library(dplyr)
-  
+function(league = "premier_league", season = "2024_25", team = "manchester utd") {
   league_path <- file.path("Data", league)
   if (!dir.exists(league_path)) {
     return(list(error = sprintf("League not found: %s", league)))
