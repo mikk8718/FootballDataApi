@@ -13,6 +13,8 @@ COPY / /workspace
 
 RUN R -e "install.packages('plumber')"
 RUN R -e "install.packages('dplyr')"
+RUN R -e "install.packages('RSQLite')" 
+RUN R -e "install.packages('DBI')"
 
 EXPOSE 8000
 
