@@ -7,3 +7,4 @@
 - [x] better description in API
 - [x] ensure data normalization
 - [x] implement new schema with teams, leagues, matches, match_stats and events
+- [ ] add per team basis to existing endpoint, or add new ones
